@@ -9,12 +9,7 @@ namespace MyFinances.BL.Controller
 
         public UserController(User user)
         {
-            if (user is null)
-            {
-                throw new ArgumentNullException(nameof(user));
-            }
-
-            User = user;
+            User = user ?? throw new ArgumentNullException(nameof(user));
         }
 
         public bool Save()
